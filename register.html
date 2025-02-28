@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Coach Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="sign-in.html">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Register Section -->
+    <section class="sign-in">
+        <div class="info">
+            <h1>Create Your Account</h1>
+            <form id="registerForm">
+                <label for="newUsername">Username:</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+
+                <label for="newPassword">Password:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <a href="sign-in.html">Sign In</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Coach Profile. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple Register form validation
+        document.getElementById("registerForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission to server
+
+            let username = document.getElementById("newUsername").value;
+            let password = document.getElementById("newPassword").value;
+
+            // Check if both fields are filled (Basic Validation)
+            if (username === "" || password === "") {
+                alert("Both fields are required!");
+            } else {
+                alert("Registration Successful!");
+                // In a real-world scenario, you would send the data to the backend server
+                window.location.href = "sign-in.html"; // Redirect to sign-in page after successful registration
+            }
+        });
+    </script>
+</body>
+
+</html>

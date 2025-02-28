@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coach Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    /* Footer */
+footer {
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+</style>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="sign-in.html">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="image-slider">
+            <img src="Images/image1.jpg" alt="Coach" class="active">
+            <img src="Images/image2.jpg" alt="Coach">
+            <img src="Images/image3.jpg" alt="Coach">
+        </div>
+        <div class="info">
+            <h1>Meet Our Certified Coach</h1>
+            <p>Certified in Volleyball Coaching, bringing positivity and expertise to help you achieve your goals.</p>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Coach Profile. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Image Slider Logic
+        let images = document.querySelectorAll('.image-slider img');
+        let index = 0;
+
+        function flipImages() {
+            images.forEach(img => img.classList.remove('active'));
+            images[index].classList.add('active');
+            index = (index + 1) % images.length;
+        }
+        setInterval(flipImages, 3000);
+    </script>
+</body>
+
+</html>
